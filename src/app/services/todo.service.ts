@@ -1,32 +1,49 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Todo} from '../classes/todo';
 
 @Injectable()
 export class TodoService {
 
-  private todos: Todo[];
-  private nextId: number;
-  constructor() {
-    this.todos=[
-      new Todo(0,"Disturb Deekay"),
-      new Todo(1,"Make dinner tonignt"),
-      new Todo(2,"Create an Angular Todo App")
-    ];
-    this.nextId = 3;
-  }
+    private todos: Todo[];
+    private nextId: number;
 
-  public addTodo(text:string): void{
-    //console.log(this.todos);
-    let todo = new Todo(this.nextId,text);
-    this.todos.push(todo);
-    this.nextId++;
-  }
+    constructor() {
+        this.todos = [
+            new Todo(0, 'Disturb Deekay'),
+            new Todo(1, 'Make dinner tonignt'),
+            new Todo(2, 'Create an Angular Todo App')
+        ];
+        this.nextId = 3;
+    }
 
-  public getTodos():Todo[]{
-    return this.todos;
-  }
+    public addTodo(text: string): void {
+        // console.log(this.todos);
+        let todo = new Todo(this.nextId, text);
+        this.todos.push(todo);
+        this.nextId++;
+    }
 
-  public removeTodo(id:number):void{
-    this.todos = this.todos.filter((todo) => todo.id !== id);
-  }
+    public getTodos(): Todo[] {
+        return this.todos;
+    }
+
+    public removeTodo(id: number): void {
+        this.todos = this.todos.filter((todo) => todo.id !== id);
+    }
+
+
+
+    private getWithCompleted(completed: Boolean) {
+        return this.todos.filter((todo) => todo.complited === completed);
+    }
+
+    private removeCompleted() {
+        this.todos = this.getWithCompleted(false);
+    }
+
+    getCompleted() {
+        return this.getWithCompleted(true);
+    }
+
+
 }
