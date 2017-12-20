@@ -6,16 +6,30 @@
 .removeTodo {
   display: none;
   float: right;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   outline: none;
   box-shadow: none;
-  border-width: 2px;
-  border-radius: 3px;
-  border-style: solid;
-  padding: 8px;
+  font-size: 20px;
+  border: none;
+  /*border-width: 2px;*/
+  /*border-radius: 3px;*/
+  /*border-style: solid;*/
+  /*padding: 8px;*/
   color: rgba(203, 20, 32, 0.4);
-  border-color: rgba(203, 20, 32, 0.4);
+  /*border-color: rgba(203, 20, 32, 0.4);*/
   background-color: transparent;
+}
+
+.removeTodo:hover{
+  color: rgba(203, 20, 32, 0.4);
+}
+
+.removeTodo:after{
+  content: 'x';
+}
+
+.todoWrapper:hover .removeTodo{
+  display: block;
 }
 
 .clearFix:after{
@@ -24,10 +38,28 @@
   clear: both;
 }
 
-.completed removeTodo{
+.completed label{
   text-decoration: line-through;
 }
 
-.completed button {
+.completed .removeTodo {
   display: block;
+}
+
+.checkbox{
+  display: none;
+}
+
+.checkbox-custom:before {
+  content: "";
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  margin: 0 5px 0 0;
+  background-image: url("../../images/NewProject.png");
+  background-position: -17px 0;
+}
+
+.checkbox:checked + .checkbox-custom:before  {
+  background-position: 0;
 }

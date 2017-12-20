@@ -1,7 +1,8 @@
 <div class="todoWrapper clearFix"  [class.completed]="todo.complited">
     <label>
-    <input type="checkbox" class="checkbox"  (click)="toggleCompletion(todo)" [checked]="todo.complited">
-    {{todo.text}}
+        <input type="checkbox" class="checkbox"  (click)="toggleCompletion(todo)" [checked]="todo.complited">
+        <span class="checkbox-custom"></span>
+        {{todo.text}}
     </label>
-    <button class="removeTodo" (click)="removeTodo()">Remove</button>
+    <button class="removeTodo" (click)="removeTodo()"></button>
 </div>
