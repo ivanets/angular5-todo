@@ -22,8 +22,8 @@ export class TodoItemComponent implements OnInit {
         this.todoService.removeTodo(this.todo.id);
     }
 
-    toggleCompletion(todo) {
-        todo.complited = !todo.complited;
-        console.log(todo);
+    private toggleCompletion(todo) {
+        todo.completed = !todo.completed;
+        this.todoService.updateCompletion(todo);
     }
 }
