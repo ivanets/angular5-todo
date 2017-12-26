@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { HeaderComponent } from './components/header/header.component';
 import { TodoInputComponent } from './components/todo-input/todo-input.component';
+import {TodoTagComponent} from './components/tags/todo-tag-component';
 import {TodoService} from './services/todo.service';
 import { TodoItemComponent } from './components/todo-item/todo-item.component';
 
@@ -18,7 +19,8 @@ import { TodoItemComponent } from './components/todo-item/todo-item.component';
     AboutComponent,
     HeaderComponent,
     TodoInputComponent,
-    TodoItemComponent
+    TodoItemComponent,
+    TodoTagComponent
   ],
   imports: [
     BrowserModule,

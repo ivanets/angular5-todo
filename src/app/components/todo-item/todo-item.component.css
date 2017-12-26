@@ -1,42 +1,42 @@
+
 .todoWrapper {
-  border-bottom: 1px solid #efefef;
-  text-align: left;
-  margin-bottom: 10px;
+width: 70%;
+margin-bottom: 10px;
+border-bottom: 1px solid #efefef;
+text-align: left;
+float: right;
 }
+
+
 .removeTodo {
-  display: none;
-  float: right;
-  margin-bottom: 5px;
-  outline: none;
-  box-shadow: none;
-  font-size: 20px;
-  border: none;
-  /*border-width: 2px;*/
-  /*border-radius: 3px;*/
-  /*border-style: solid;*/
-  /*padding: 8px;*/
-  color: rgba(203, 20, 32, 0.4);
-  /*border-color: rgba(203, 20, 32, 0.4);*/
-  background-color: transparent;
+display: none;
+float: right;
+margin-bottom: 5px;
+outline: none;
+box-shadow: none;
+font-size: 20px;
+border: none;
+/*border-width: 2px;*/
+/*border-radius: 3px;*/
+/*border-style: solid;*/
+/*padding: 8px;*/
+color: rgba(203, 20, 32, 0.4);
+/*border-color: rgba(203, 20, 32, 0.4);*/
+background-color: transparent;
 }
 
 .removeTodo:hover{
-  color: rgba(203, 20, 32, 0.4);
+color: rgba(203, 20, 32, 0.4);
 }
 
 .removeTodo:after{
-  content: 'x';
+content: 'x';
 }
 
 .todoWrapper:hover .removeTodo{
-  display: block;
+display: block;
 }
 
-.clearFix:after{
-  display: block;
-  content: '';
-  clear: both;
-}
 
 .completed label{
   text-decoration: line-through;

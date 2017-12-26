@@ -1,9 +1,12 @@
-<div class = "App">
-  <div class = "todo-wrapper">
-    <app-header></app-header>
-    <app-todo-input></app-todo-input>
-    <div *ngFor="let todo of todoService.getTodos()">
-      <app-todo-item [todo]="todo"></app-todo-item>
+<div class="App clearFix">
+    <div class="todo-wrapper">
+        <app-header></app-header>
+        <app-todo-input></app-todo-input>
+        <div *ngFor="let todo of todoService.getTodos()">
+            <app-todo-item [todo]="todo"></app-todo-item>
+        </div>
+        <div *ngFor="let tag of todoService.getTags()">
+            <app-todo-teg [tag]="tag"></app-todo-teg>
+        </div>
     </div>
-  </div>
 </div>

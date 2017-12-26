@@ -9,9 +9,11 @@ import {TodoService} from '../../services/todo.service';
 export class TodoInputComponent implements OnInit {
 
     private todoText: string;
+    private todoTags: string;
 
     constructor(private todoService: TodoService) {
         this.todoText = '';
+        this.todoTags = '';
 
     }
 
@@ -19,8 +21,20 @@ export class TodoInputComponent implements OnInit {
     ngOnInit() {
     }
 
-    private addTodo(): void {
+    addTodo(): void {
         this.todoService.addTodo(this.todoText);
         this.todoText = '';
     }
+
+    addTags(): void {
+        this.todoService.addTags(this.todoTags);
+        this.todoTags = '';
+    }
+
+    // addTodoWithTags(): void {
+    //     this.todoService.addTodo(this.todoText);
+    //     this.todoService.addTags(this.todoTags);
+    //     this.todoTags = '';
+    //     this.todoText = '';
+    // }
 }

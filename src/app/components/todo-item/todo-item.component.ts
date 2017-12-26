@@ -2,6 +2,7 @@ import {Component, OnInit, Input} from '@angular/core';
 import {Todo} from '../../classes/todo';
 import {TodoService} from '../../services/todo.service';
 
+
 @Component({
     selector: 'app-todo-item',
     templateUrl: './todo-item.component.html',
