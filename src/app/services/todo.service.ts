@@ -27,15 +27,9 @@ export class TodoService {
     }
 
     public addTodo(text: string): void {
-        // console.log(this.todos);
-        // if (isEmpty(this.todos)){
-        //     this.todosId = 0;
-        // }else {
-        //     this.todosId = this.todos['id'];
-        // }
-        let todo = new Todo(this.todosId, text);
+        this.getLockalTodo();
+        let todo = new Todo(this.todos.length > 0 ? this.todos.length : 0, text);
         this.todos.push(todo);
-        this.todosId++;
         this.updateTodo();
     }
 
@@ -79,12 +73,10 @@ export class TodoService {
     }
 
     public addTags(name: string): void {
-        // console.log(this.tags);
-        let tag = new Tag(this.tagsId, name);
+        this.getLockalTag();
+        let tag = new Tag(this.tags.length > 0 ? this.tags.length : 0, name);
         this.tags.push(tag);
-        this.tagsId++;
         this.updateTag();
-        // return this.tags;
     }
 
     public removeTag(id: number) {
